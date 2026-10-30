@@ -44,7 +44,7 @@ Name: Alberto Alcubilla. Title: "DoP y Gaffer" / Director de Fotografía.
 - Portrait: `assets/img/alberto.jpg`.
 - Credits (year, title, format, role). The old Canva site printed "Desertoris" under every credit; that is a template leftover, not a production company, and was dropped.
 - "Tarab" and "Ver la luz" share the same still in the source material; a distinct still for Tarab is pending.
-- "El plan perfecto" (2025, Cortometraje, DoP) appears only in the reel (32.5–35.4 s); added with the client's approval. It has a reel clip but no still.
+- "El plan perfecto" (2025, Cortometraje, DoP) appears only in the reel (32.5–35.4 s); it was added and later removed at the client's request. Do not add it back.
 - No testimonials, client logos, awards or festival selections on hand: do not invent them.
 - Contact: albertoalcu22@gmail.com, +34 648 299 274, Instagram @alberto_alcubilla_.
 

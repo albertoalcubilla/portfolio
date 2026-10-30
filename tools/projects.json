@@ -13,10 +13,6 @@
         ["Dirección de fotografía", "Alberto Alcubilla y Haridian Sarabia"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],
         ["Festival", "Tenerife Noir Express 2025"]] },
 
-    { "slug": "el-plan-perfecto", "title": "El plan perfecto", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
-      "clip": { "start": 32.5, "end": 35.4 },
-      "credits": [["Dirección de fotografía", "Alberto Alcubilla"]] },
-
     { "slug": "paranoia", "title": "Paranoia", "format": "Fashion Film", "role": "DoP", "year": 2024, "cat": "dop",
       "still": "paranoia", "w": 800, "h": 450, "clip": { "start": 5.6, "end": 8.4 }, "film": { "file": true, "poster": 95, "loop": 160 }, "gallery": 4,
       "synopsis": "Un chico, de unos 25 años, despierta de un sueño y se encuentra atrapado en medio de una celda. Aterrorizado y desorientado, se da cuenta de que su pesadilla aparentemente ha terminado, solo para descubrir que sigue sometido a una tortura mental por el sistema opresivo en el que vive.",
@@ -73,6 +69,6 @@
     { "still": "alberto", "w": 1280, "h": 1600, "alt": "Alberto Alcubilla en un plató", "label": "Alberto" }
   ],
   "infoLoop": { "slug": "desertoris", "at": 27, "len": 12 },
-  "homeOrder": ["reel", "desertoris", "sombras-del-futuro", "el-plan-perfecto", "onset:0", "emperatriz", "hot-girl-summer", "paranoia", "habitada",
+  "homeOrder": ["reel", "desertoris", "sombras-del-futuro", "onset:0", "emperatriz", "hot-girl-summer", "paranoia", "habitada",
     "cuando-nadie-me-ve", "onset:1", "camaleon", "volver-a-caer", "dimension", "ver-la-luz", "onset:2"]
 }
