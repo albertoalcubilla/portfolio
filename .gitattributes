@@ -1,0 +1,5 @@
+# Media is already compressed: store it as-is, without delta search (keeps pushes fast).
+*.mp4 binary -delta
+*.webp binary -delta
+*.woff2 binary -delta
+*.svg text eol=lf
