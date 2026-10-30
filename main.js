@@ -100,6 +100,7 @@ if (infoBg) {
   const panels = panelLinks.map((link) => document.getElementById(link.dataset.infoPanel)).filter(Boolean);
   const closeAll = () => {
     panels.forEach((panel) => { panel.hidden = true; });
+    panelLinks.forEach((link) => link.setAttribute('aria-expanded', 'false'));
     document.body.classList.remove('is-panel');
   };
   const openPanel = (id) => {
@@ -107,10 +108,12 @@ if (infoBg) {
     const panel = document.getElementById(id);
     if (!panel) return;
     panel.hidden = false;
+    const trigger = panelLinks.find((link) => link.dataset.infoPanel === id);
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('is-panel');
   };
   panelLinks.forEach((link) => link.addEventListener('click', (event) => {
-    event.preventDefault();
+    if (link.tagName === 'A') event.preventDefault();
     const id = link.dataset.infoPanel;
     const panel = document.getElementById(id);
     if (panel && !panel.hidden) {

@@ -105,11 +105,12 @@ a { color: inherit; text-decoration: none; }
   mix-blend-mode: difference;
   pointer-events: none;
 }
-.nav a { pointer-events: auto; justify-self: center; }
+.nav a, .nav button { pointer-events: auto; justify-self: center; }
 .nav a:first-child { justify-self: start; }
 .nav a:last-child { justify-self: end; }
-.nav a { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.4s var(--ease-out); }
-.nav a:hover { background-size: 100% 1px; }
+.nav a, .nav button { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.4s var(--ease-out); }
+.nav a:hover, .nav button:hover { background-size: 100% 1px; }
+.nav button { padding: 0; border: 0; background-color: transparent; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
 
 /* ---------- Staggered grid ---------- */
 
@@ -303,7 +304,7 @@ a.item { cursor: pointer; }
     mix-blend-mode: normal;
     border-bottom: 1px solid var(--line);
   }
-  .nav a { justify-self: auto !important; }
+  .nav a, .nav button { justify-self: auto !important; }
   .nav a:first-child { grid-column: 1 / -1; }
 
   .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 2.5rem; padding-top: 5.5rem; }
