@@ -1,0 +1,78 @@
+{
+  "projects": [
+    { "slug": "desertoris", "title": "Desertoris", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
+      "still": "desertoris", "w": 748, "h": 421, "clip": { "start": 12.5, "end": 32.3, "loop": 15.5 }, "film": { "file": true }, "gallery": 8,
+      "synopsis": "Ana, una fotógrafa veterana de guerra se verá enfrentada a su pasado tras ser interrogada sobre la foto más importante de su carrera. Bajo el foco de un público expectante, revivirá un pecado que pensó que había logrado enterrar hace 30 años.",
+      "credits": [["Dirección", "Ignacio Tovar"], ["Producción", "Pablo Fernández Navarrete"], ["Reparto", "María Chacin, Bruno Rodríguez, Anna Santamaria, Alejandra Prieto"],
+        ["Dirección de fotografía", "Alberto Alcubilla"], ["Montaje", "Joaquin Hoyos"], ["Color", "Grecia Garza Gómez"]] },
+
+    { "slug": "sombras-del-futuro", "title": "Sombras del futuro", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
+      "still": "sombras-del-futuro", "w": 494, "h": 401, "clip": { "start": 8.5, "end": 12.3 }, "gallery": 4,
+      "synopsis": "Apunta con cuidado y mira al diablo a los ojos.",
+      "credits": [["Dirección", "Nestor Luis"], ["Producción", "Natalia Moya"], ["Reparto", "Lara de Blanco, Aitor Fierro, Daniel Oliva, Teo Luis, Julio Sarabia"],
+        ["Dirección de fotografía", "Alberto Alcubilla y Haridian Sarabia"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],
+        ["Festival", "Tenerife Noir Express 2025"]] },
+
+    { "slug": "el-plan-perfecto", "title": "El plan perfecto", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
+      "clip": { "start": 32.5, "end": 35.4 },
+      "credits": [["Dirección de fotografía", "Alberto Alcubilla"]] },
+
+    { "slug": "paranoia", "title": "Paranoia", "format": "Fashion Film", "role": "DoP", "year": 2024, "cat": "dop",
+      "still": "paranoia", "w": 800, "h": 450, "clip": { "start": 5.6, "end": 8.4 }, "film": { "file": true, "poster": 95 }, "gallery": 4,
+      "synopsis": "Un chico, de unos 25 años, despierta de un sueño y se encuentra atrapado en medio de una celda. Aterrorizado y desorientado, se da cuenta de que su pesadilla aparentemente ha terminado, solo para descubrir que sigue sometido a una tortura mental por el sistema opresivo en el que vive.",
+      "credits": [["Dirección", "Nestor Luis"], ["Producción", "PIWI.Visual | Pau Mayor"], ["Reparto", "Pau Clavel"],
+        ["Dirección de fotografía", "Alberto Alcubilla"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],
+        ["Festival", "FIC Gáldar 2026, sección Cortos Canarios"]] },
+
+    { "slug": "emperatriz", "title": "Emperatriz", "by": "Cientouno", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
+      "still": "emperatriz", "w": 900, "h": 1597, "film": { "file": true, "ratio": 0.5625, "loop": 10 }, "gallery": 3,
+      "credits": [["Marca", "Cientouno"], ["Dirección y fotografía", "Lynnette Navarro"], ["Producción", "María Cristóbal"], ["Reparto", "Jaime, Guilia Farris, María Cristóbal"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "hot-girl-summer", "title": "Hot Girl Summer", "by": "Maison Grande", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
+      "still": "hot-girl-summer", "w": 602, "h": 450, "film": { "file": true, "loop": 12, "crop": "960:720", "tileRatio": 1.3333 }, "gallery": 4,
+      "credits": [["Marca", "Maison Grande"], ["Dirección", "Ana Cumbreras - Sena y Lynnette Navarro"], ["Producción", "Coraje Estudios"], ["Reparto", "Maria Chacín"],
+        ["Dirección de fotografía", "Lynnette Navarro"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "habitada", "title": "Habitada", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
+      "still": "habitada", "w": 602, "h": 450, "film": { "file": true, "loop": 20, "crop": "960:720", "tileRatio": 1.3333 }, "gallery": 4,
+      "credits": [["Dirección", "Ana Cumbreras - Sena"], ["Producción", "Coraje Estudios"], ["Reparto", "Azumi Sanchez, Josue Nicolás Avendaño, Lilly Sierra, Pauline Schneider, Chantal Morlas"],
+        ["Dirección de fotografía", "Visión tunel (Andán Franco y Samuel Diez)"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "cuando-nadie-me-ve", "title": "Cuando nadie me ve", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
+      "still": "cuando-nadie-me-ve", "w": 601, "h": 450, "film": { "file": true, "ratio": 1.3333, "loop": 30 }, "gallery": 4,
+      "credits": [["Dirección", "Ana Cumbreras - Sena"], ["Producción", "Coraje Estudios"], ["Reparto", "Jose Miguel, Helena, Guinza"],
+        ["Dirección de fotografía", "Visión tunel (Andán Franco y Samuel Diez)"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "camaleon", "title": "Camaleón", "format": "Cortometraje", "role": "Gaffer", "year": 2026, "cat": "gaffer",
+      "still": "camaleon", "w": 698, "h": 450, "gallery": 4, "status": "En postproducción",
+      "credits": [["Dirección", "Daniel Olmos"], ["Producción", "Esteban Cardona"], ["Reparto", "Miguel Paez, Fernando Santos"],
+        ["Dirección de fotografía", "Alberto Magdaleno"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "volver-a-caer", "title": "Volver a caer", "format": "Videoclip", "role": "Gaffer", "year": 2025, "cat": "gaffer",
+      "still": "volver-a-caer", "w": 800, "h": 450, "clip": { "start": 48.5, "end": 56.9 }, "film": { "file": true }, "gallery": 4,
+      "credits": [["Dirección", "Sae Morah y Cami Urban"], ["Producción", "Hugo Luna"], ["Cantante", "Ivana Tamayo"],
+        ["Dirección de fotografía", "Iana Maliinka y Aaron Ortiz"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "dimension", "title": "Dimension", "format": "Spot publicitario", "role": "Gaffer", "year": 2025, "cat": "gaffer",
+      "still": "dimension", "w": 800, "h": 450, "clip": { "start": 35.5, "end": 48.3 }, "film": { "file": true, "poster": "still" }, "gallery": 4,
+      "credits": [["Dirección", "Ignacio Tovar"], ["Dirección creativa", "Ben Aguilera"], ["Producción", "Coraje Estudios | Oscar Martin"],
+        ["Reparto", "Tyler Freeman, Amy Harben-la Torre, Renne Flores, Alberto Castañeda"], ["Dirección de fotografía", "Lynnette Navarro"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "ver-la-luz", "title": "Ver la luz", "format": "Cortometraje", "role": "Gaffer", "year": 2025, "cat": "gaffer",
+      "still": "ver-la-luz", "w": 800, "h": 401, "clip": { "start": 57.0, "end": 69.5 }, "film": { "file": true }, "gallery": 4,
+      "credits": [["Dirección", "Andrea Zambrano"], ["Producción", "Maria Paula"], ["Reparto", "Iñaqui Guevara, Fael García"],
+        ["Dirección de fotografía", "Natalia Rodriguez"], ["Gaffer", "Alberto Alcubilla"]] },
+
+    { "slug": "tarab", "title": "Tarab", "format": "Videoarte", "role": "Gaffer", "year": 2026, "cat": "gaffer",
+      "credits": [["Dirección", "Maria Chacín"], ["Producción", "Ignacio Tovar"], ["Reparto", "Maria Chacín"], ["Dirección de fotografía", "Lynnette Navarro"], ["Gaffer", "Alberto Alcubilla"]] }
+  ],
+  "onset": [
+    { "still": "hero-3", "w": 2400, "h": 1600, "alt": "Alberto dirigiendo la luz en un plató con difusión cenital", "label": "Plató" },
+    { "still": "hero-1", "w": 2400, "h": 1600, "alt": "Equipo de cámara frente a un actor en un set en blanco y negro", "label": "Cámara" },
+    { "still": "hero-2", "w": 2400, "h": 1600, "alt": "Foto fija tomada en rodaje, una actriz tendida en el suelo", "label": "Foto fija" },
+    { "still": "alberto", "w": 1280, "h": 1600, "alt": "Alberto Alcubilla en un plató", "label": "Alberto" }
+  ],
+  "infoLoop": { "slug": "desertoris", "at": 27, "len": 12 },
+  "homeOrder": ["reel", "desertoris", "sombras-del-futuro", "el-plan-perfecto", "onset:0", "emperatriz", "hot-girl-summer", "paranoia", "habitada",
+    "cuando-nadie-me-ve", "onset:1", "camaleon", "volver-a-caer", "dimension", "ver-la-luz", "onset:2"]
+}

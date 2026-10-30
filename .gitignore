@@ -1,0 +1,10 @@
+# Herramientas locales (optimización de medios)
+tools/node_modules/
+
+# Originales sin optimizar y masters: la web usa assets/web/
+assets/img/
+assets/video/
+
+# Material de trabajo de Claude e impeccable
+.claude/
+.impeccable/
