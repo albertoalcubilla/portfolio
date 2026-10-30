@@ -339,7 +339,7 @@ a.item { cursor: pointer; }
   inset: auto 0 0;
   z-index: 3;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto;
   padding: 1rem var(--edge) 1.1rem;
   font-size: var(--small);
   font-weight: 560;
@@ -411,8 +411,7 @@ a.item { cursor: pointer; }
 .ipanel a:hover { color: rgb(255 255 255 / 0.7); }
 
 @media (max-width: 799px) {
-  .infopage__foot { grid-template-columns: 1fr auto auto; gap: 0.65rem; font-size: 0.68rem; }
-  .infopage__foot > :nth-child(2) { justify-self: auto; }
+  .infopage__foot { grid-template-columns: 1fr auto; gap: 0.65rem; font-size: 0.68rem; }
   .ipanel__list { font-size: 1.2rem; }
   .istatement { padding-top: 7.5rem; }
   .istatement__name { font-size: 19vw; }
