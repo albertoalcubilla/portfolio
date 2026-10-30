@@ -73,8 +73,9 @@ for (const p of projects.filter((p) => p.film && p.film.file)) {
   await sharp(posterJpg).webp({ quality: 88 }).toFile(join(FILMS_OUT, `${p.slug}.webp`));
   unlinkSync(posterJpg);
 
-  // Projects that are not in the reel take their grid loop and poster from the film itself.
-  if (!p.clip) {
+  // The grid loop and poster come from the film itself (free of the reel's captions) when the project
+  // is not in the reel or names a film.loop moment.
+  if (!p.clip || p.film.loop !== undefined) {
     const at = p.film.loop ?? 8;
     ff(['-ss', String(at), '-t', '5', '-i', src, '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '29',
       '-pix_fmt', 'yuv420p', '-vf', `${p.film.crop ? `crop=${p.film.crop},` : ''}scale='if(gt(iw,ih),640,-2)':'if(gt(iw,ih),-2,640)',fps=24`, '-movflags', '+faststart',

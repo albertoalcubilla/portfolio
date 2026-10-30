@@ -90,15 +90,20 @@ const srcset = (still, w) => {
 };
 const imgSrc = (still) => (still.startsWith('hero') ? `assets/web/img/${still}-960.webp` : `assets/web/img/${still}-lg.webp`);
 
+// The tile shows the project's own footage: a loop from its film, else its reel fragment, else a still
+// (`tile` names a gallery frame to use instead, for projects whose only footage is the captioned reel).
 function projectTile(p, i) {
-  const moving = p.clip || p.film;
-  const ratio = p.clip ? 16 / 9 : p.film ? p.film.tileRatio || p.film.ratio || 16 / 9 : p.w / p.h;
+  const [tw, th] = p.tile ? galDims[p.tile] : [];
+  const moving = !p.tile && (p.clip || p.film);
+  const ratio = p.tile ? tw / th : p.film ? p.film.tileRatio || p.film.ratio || 16 / 9 : p.clip ? 16 / 9 : p.w / p.h;
   const tall = ratio < 1;
-  const media = moving
+  const media = p.tile
+    ? `<img src="assets/web/img/gallery/${p.tile}-hq.webp" width="${tw}" height="${th}" alt="" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async">`
+    : moving
     ? `<video class="item__video" muted loop playsinline preload="none" poster="assets/web/video/clips/${p.slug}.webp" data-src="assets/web/video/clips/${p.slug}-loop.mp4" aria-hidden="true"></video>`
     : `<img src="${imgSrc(p.still)}" srcset="${srcset(p.still, p.w)}" sizes="(min-width: 800px) 42vw, 90vw" width="${p.w}" height="${p.h}" alt="" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async">`;
   return `      <a class="item${tall ? ' item--tall' : ''}" href="trabajos/${p.slug}.html" data-title="${esc(fullTitle(p))}" style="${slot(i, tall)}">
-        <div class="item__media" style="--ar: ${moving ? ratio.toFixed(4) : `${p.w} / ${p.h}`}">
+        <div class="item__media" style="--ar: ${moving || p.tile ? ratio.toFixed(4) : `${p.w} / ${p.h}`}">
           ${media}
         </div>
         <p class="item__cap"><span>${esc(fullTitle(p))}</span><span>${esc(meta(p))}</span></p>

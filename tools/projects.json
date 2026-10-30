@@ -1,13 +1,13 @@
 {
   "projects": [
     { "slug": "desertoris", "title": "Desertoris", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
-      "still": "desertoris", "w": 748, "h": 421, "clip": { "start": 12.5, "end": 32.3, "loop": 15.5 }, "film": { "file": true }, "gallery": 8,
+      "still": "desertoris", "w": 748, "h": 421, "clip": { "start": 12.5, "end": 32.3, "loop": 15.5 }, "film": { "file": true, "loop": 140 }, "gallery": 8,
       "synopsis": "Ana, una fotógrafa veterana de guerra se verá enfrentada a su pasado tras ser interrogada sobre la foto más importante de su carrera. Bajo el foco de un público expectante, revivirá un pecado que pensó que había logrado enterrar hace 30 años.",
       "credits": [["Dirección", "Ignacio Tovar"], ["Producción", "Pablo Fernández Navarrete"], ["Reparto", "María Chacin, Bruno Rodríguez, Anna Santamaria, Alejandra Prieto"],
         ["Dirección de fotografía", "Alberto Alcubilla"], ["Montaje", "Joaquin Hoyos"], ["Color", "Grecia Garza Gómez"]] },
 
     { "slug": "sombras-del-futuro", "title": "Sombras del futuro", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
-      "still": "sombras-del-futuro", "w": 494, "h": 401, "clip": { "start": 8.5, "end": 12.3 }, "gallery": 4,
+      "still": "sombras-del-futuro", "w": 494, "h": 401, "clip": { "start": 8.5, "end": 12.3 }, "gallery": 4, "tile": "sombras-del-futuro-1",
       "synopsis": "Apunta con cuidado y mira al diablo a los ojos.",
       "credits": [["Dirección", "Nestor Luis"], ["Producción", "Natalia Moya"], ["Reparto", "Lara de Blanco, Aitor Fierro, Daniel Oliva, Teo Luis, Julio Sarabia"],
         ["Dirección de fotografía", "Alberto Alcubilla y Haridian Sarabia"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],
@@ -18,7 +18,7 @@
       "credits": [["Dirección de fotografía", "Alberto Alcubilla"]] },
 
     { "slug": "paranoia", "title": "Paranoia", "format": "Fashion Film", "role": "DoP", "year": 2024, "cat": "dop",
-      "still": "paranoia", "w": 800, "h": 450, "clip": { "start": 5.6, "end": 8.4 }, "film": { "file": true, "poster": 95 }, "gallery": 4,
+      "still": "paranoia", "w": 800, "h": 450, "clip": { "start": 5.6, "end": 8.4 }, "film": { "file": true, "poster": 95, "loop": 160 }, "gallery": 4,
       "synopsis": "Un chico, de unos 25 años, despierta de un sueño y se encuentra atrapado en medio de una celda. Aterrorizado y desorientado, se da cuenta de que su pesadilla aparentemente ha terminado, solo para descubrir que sigue sometido a una tortura mental por el sistema opresivo en el que vive.",
       "credits": [["Dirección", "Nestor Luis"], ["Producción", "PIWI.Visual | Pau Mayor"], ["Reparto", "Pau Clavel"],
         ["Dirección de fotografía", "Alberto Alcubilla"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],
@@ -49,17 +49,17 @@
         ["Dirección de fotografía", "Alberto Magdaleno"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "volver-a-caer", "title": "Volver a caer", "format": "Videoclip", "role": "Gaffer", "year": 2025, "cat": "gaffer",
-      "still": "volver-a-caer", "w": 800, "h": 450, "clip": { "start": 48.5, "end": 56.9 }, "film": { "file": true }, "gallery": 4,
+      "still": "volver-a-caer", "w": 800, "h": 450, "clip": { "start": 48.5, "end": 56.9 }, "film": { "file": true, "loop": 40 }, "gallery": 4,
       "credits": [["Dirección", "Sae Morah y Cami Urban"], ["Producción", "Hugo Luna"], ["Cantante", "Ivana Tamayo"],
         ["Dirección de fotografía", "Iana Maliinka y Aaron Ortiz"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "dimension", "title": "Dimension", "format": "Spot publicitario", "role": "Gaffer", "year": 2025, "cat": "gaffer",
-      "still": "dimension", "w": 800, "h": 450, "clip": { "start": 35.5, "end": 48.3 }, "film": { "file": true, "poster": "still" }, "gallery": 4,
+      "still": "dimension", "w": 800, "h": 450, "clip": { "start": 35.5, "end": 48.3 }, "film": { "file": true, "poster": "still", "loop": 100 }, "gallery": 4,
       "credits": [["Dirección", "Ignacio Tovar"], ["Dirección creativa", "Ben Aguilera"], ["Producción", "Coraje Estudios | Oscar Martin"],
         ["Reparto", "Tyler Freeman, Amy Harben-la Torre, Renne Flores, Alberto Castañeda"], ["Dirección de fotografía", "Lynnette Navarro"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "ver-la-luz", "title": "Ver la luz", "format": "Cortometraje", "role": "Gaffer", "year": 2025, "cat": "gaffer",
-      "still": "ver-la-luz", "w": 800, "h": 401, "clip": { "start": 57.0, "end": 69.5 }, "film": { "file": true }, "gallery": 4,
+      "still": "ver-la-luz", "w": 800, "h": 401, "clip": { "start": 57.0, "end": 69.5 }, "film": { "file": true, "loop": 140 }, "gallery": 4,
       "credits": [["Dirección", "Andrea Zambrano"], ["Producción", "Maria Paula"], ["Reparto", "Iñaqui Guevara, Fael García"],
         ["Dirección de fotografía", "Natalia Rodriguez"], ["Gaffer", "Alberto Alcubilla"]] },
 
