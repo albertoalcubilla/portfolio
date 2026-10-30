@@ -4,10 +4,11 @@ Web estática (HTML + CSS + JS, sin dependencias) lista para GitHub Pages.
 
 ## Páginas
 
-- `index.html`: todos los trabajos (reel, DoP, Gaffer y rodaje).
+- `index.html`: la portada. Nombre y oficio sobre su propio vídeo, arriba los botones Trabajos, Formación y Créditos (estos dos abren un panel; `index.html#formacion` y `#creditos` llegan con él abierto) y abajo el contacto.
+- `trabajos.html`: todos los trabajos (reel, DoP, Gaffer y rodaje).
 - `dop.html`, `gaffer.html`, `rodaje.html`: las páginas de la barra de abajo.
-- `informacion.html`: bio, formación, créditos y contacto.
-- `trabajos/<proyecto>.html`: una página por proyecto, con el fragmento del reel (si lo hay) y el fotograma.
+- `trabajos/<proyecto>.html`: una página por proyecto, con el vídeo completo y hasta 8 fotos.
+- `informacion.html`: solo redirige a la portada (la dirección antigua).
 
 Todas se generan con `tools/build.mjs` a partir de `tools/projects.json`. Para añadir o cambiar un proyecto, edita ese JSON y regenera (ver abajo); no edites los HTML a mano.
 
@@ -36,6 +37,10 @@ node tools/fetch-canva.mjs
 ```
 
 ```bash
+node tools/frames.mjs
+```
+
+```bash
 node tools/optimize.mjs
 ```
 
@@ -51,7 +56,7 @@ node tools/masters.mjs
 node tools/build.mjs
 ```
 
-`fetch-canva.mjs` descarga los vídeos completos y las galerías de la antigua web de Canva, `optimize.mjs` recorta y comprime las fotos y el reel, `clips.mjs` corta un fragmento por proyecto (tiempos `clip.start` / `clip.end` en `projects.json`) y publica cada vídeo completo en dos calidades, `masters.mjs` las rehace desde los masters cuando los hay, y `build.mjs` genera todas las páginas.
+`fetch-canva.mjs` descarga los vídeos completos y las galerías de la antigua web de Canva, `frames.mjs` completa cada galería con fotogramas del propio vídeo (segundos en `projects.json` → `frames`), `optimize.mjs` recorta y comprime las fotos y el reel, `clips.mjs` corta un fragmento por proyecto (tiempos `clip.start` / `clip.end` en `projects.json`) y publica cada vídeo completo en dos calidades, `masters.mjs` las rehace desde los masters cuando los hay, y `build.mjs` genera todas las páginas.
 
 ## Calidad de vídeo y fotos
 

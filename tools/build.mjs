@@ -41,15 +41,15 @@ function head(base, title, description) {
 function nav(base, current) {
   const cur = (k) => (k === current ? ' aria-current="page"' : '');
   return `  <header class="nav">
-    <a href="${base}index.html" class="nav__name"${cur('home')}>Alberto Alcubilla</a>
-    <a href="${base}index.html"${cur('trabajos')}>Trabajos</a>
-    <a href="${base}index.html#reel" class="nav__reel">Reel</a>
-    <a href="${base}informacion.html"${cur('info')}>Información</a>
+    <a href="${base}index.html" class="nav__name">Alberto Alcubilla</a>
+    <a href="${base}trabajos.html"${cur('trabajos')}>Trabajos</a>
+    <a href="${base}index.html#formacion">Formación</a>
+    <a href="${base}index.html#creditos">Créditos</a>
   </header>`;
 }
 
 function filterPill(current) {
-  const pages = [['index', 'Todo'], ['dop', 'DoP'], ['gaffer', 'Gaffer'], ['rodaje', 'Rodaje']];
+  const pages = [['trabajos', 'Todo'], ['dop', 'DoP'], ['gaffer', 'Gaffer'], ['rodaje', 'Rodaje']];
   return `  <nav class="filter" aria-label="Filtrar trabajos">
 ${pages.map(([k, label]) => `    <a href="${k}.html"${k === current ? ' aria-current="page"' : ''}>${label}</a>`).join('\n')}
   </nav>`;
@@ -140,11 +140,11 @@ function gridPage(file, current, heading, entries) {
     if (e.startsWith('onset:')) { const n = +e.split(':')[1]; return onsetTile(data.onset[n], n, i); }
     return projectTile(bySlug[e], i);
   });
-  const html = `${head('', heading === 'Trabajos' ? 'Alberto Alcubilla · Director de Fotografía' : `${heading} · Alberto Alcubilla`,
+  const html = `${head('', `${heading} · Alberto Alcubilla`,
     'Alberto Alcubilla, Director de Fotografía y Gaffer. Reel, cortometrajes, fashion films, spots y videoclips.')}
 <body>
   <a class="skip" href="#trabajos">Saltar al contenido</a>
-${nav('', current === 'index' ? 'home' : 'trabajos')}
+${nav('', 'trabajos')}
 
   <main id="top">
     <h1 class="sr">Alberto Alcubilla, Director de Fotografía y Gaffer · ${esc(heading)}</h1>
@@ -193,7 +193,9 @@ function slidesFor(p) {
       </figure>`);
   }
   // The project's full gallery from the old site; the single grid still when there is none.
-  const gallery = Array.from({ length: p.gallery || 0 }, (_, i) => `${p.slug}-${i + 1}`).filter((n) => galDims[n]);
+  // Canva photos first, then the frames taken from the film (tools/frames.mjs), numbered after them.
+  const count = (p.gallery || 0) + (p.frames?.length || 0);
+  const gallery = Array.from({ length: count }, (_, i) => `${p.slug}-${i + 1}`).filter((n) => galDims[n]);
   if (gallery.length) {
     gallery.forEach((n, i) => {
       const [w, h] = galDims[n];
@@ -215,7 +217,7 @@ function projectPage({ slug, title, giant, slides, info, next }) {
 <body class="project">
   <header class="pbar">
     <span class="pbar__count num" aria-live="polite"><span data-count>1</span> / ${slides.length}</span>
-    <a class="pbar__close" href="../index.html">Cerrar</a>
+    <a class="pbar__close" href="../trabajos.html">Cerrar</a>
   </header>
 
   <h1 class="ptitle">${esc(giant)}</h1>
@@ -273,7 +275,7 @@ projectPage({
 
 /* ---------- Grid pages ---------- */
 
-gridPage('index.html', 'index', 'Trabajos', data.homeOrder);
+gridPage('trabajos.html', 'trabajos', 'Trabajos', data.homeOrder);
 gridPage('dop.html', 'dop', 'Dirección de fotografía', withStill.filter((p) => p.cat === 'dop').map((p) => p.slug));
 gridPage('gaffer.html', 'gaffer', 'Gaffer', withStill.filter((p) => p.cat === 'gaffer').map((p) => p.slug));
 gridPage('rodaje.html', 'rodaje', 'En rodaje', data.onset.map((_, n) => `onset:${n}`));
@@ -284,9 +286,9 @@ const credits = [...projects.filter((p) => p.cat === 'dop'), ...projects.filter(
   .map((p) => `          <li>${p.still || p.clip ? `<a href="trabajos/${p.slug}.html">${esc(fullTitle(p))}</a>` : `<span>${esc(fullTitle(p))}</span>`}<span>${p.role} · ${p.year}</span></li>`)
   .join('\n');
 
-// One screen, like a title card: the statement over his own footage, contact always in reach,
-// and the longer reads (training, credits) opening as panels over the image.
-writeFileSync('informacion.html', `${head('', 'Información · Alberto Alcubilla', 'Alberto Alcubilla, Director de Fotografía y Gaffer. Formación, créditos y contacto.')}
+// The home page, one screen like a title card: the statement over his own footage, the three ways in
+// along the top (the work, and training and credits opening as panels over the image), contact below.
+writeFileSync('index.html', `${head('', 'Alberto Alcubilla · Director de Fotografía', 'Alberto Alcubilla, Director de Fotografía y Gaffer. Trabajos, formación, créditos y contacto.')}
 <body class="infopage">
   <div class="infopage__bg" aria-hidden="true">
     <video muted loop playsinline preload="none" poster="assets/web/video/info.webp"
@@ -294,9 +296,13 @@ writeFileSync('informacion.html', `${head('', 'Información · Alberto Alcubilla
   </div>
 
   <header class="ibar">
-    <a href="index.html">Alberto Alcubilla</a>
+    <a href="index.html" aria-current="page">Alberto Alcubilla</a>
+    <nav class="ibar__links" aria-label="Secciones">
+      <a class="ibar__pill ibar__pill--go" href="trabajos.html">Trabajos</a>
+      <button type="button" class="ibar__pill ibar__toggle" aria-controls="formacion" aria-expanded="false">Formación</button>
+      <button type="button" class="ibar__pill ibar__toggle" aria-controls="creditos" aria-expanded="false">Créditos</button>
+    </nav>
     <a href="https://www.instagram.com/alberto_alcubilla_/" rel="noopener" target="_blank">Instagram</a>
-    <a href="index.html" class="ibar__close">Cerrar</a>
   </header>
 
   <main id="top">
@@ -328,12 +334,23 @@ ${credits}
   <footer class="ibar ibar--foot">
     <a href="mailto:albertoalcu22@gmail.com">albertoalcu22@gmail.com</a>
     <a href="tel:+34648299274">+34 648 299 274</a>
-    <button type="button" class="ibar__toggle" aria-controls="formacion" aria-expanded="false">Formación</button>
-    <button type="button" class="ibar__toggle" aria-controls="creditos" aria-expanded="false">Créditos</button>
   </footer>
 
   <script src="main.js" defer></script>
 </body>
+</html>
+`);
+
+// The old address of the information page now lands on the home page.
+writeFileSync('informacion.html', `<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Alberto Alcubilla</title>
+  <meta http-equiv="refresh" content="0; url=index.html">
+  <link rel="canonical" href="index.html">
+</head>
+<body><a href="index.html">Alberto Alcubilla</a></body>
 </html>
 `);
 

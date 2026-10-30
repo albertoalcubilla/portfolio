@@ -31,6 +31,22 @@
   800,
   450
  ],
+ "cuando-nadie-me-ve-5": [
+  1920,
+  1440
+ ],
+ "cuando-nadie-me-ve-6": [
+  1920,
+  1440
+ ],
+ "cuando-nadie-me-ve-7": [
+  1920,
+  1440
+ ],
+ "cuando-nadie-me-ve-8": [
+  1920,
+  1440
+ ],
  "desertoris-1": [
   748,
   450
@@ -79,6 +95,22 @@
   800,
   450
  ],
+ "dimension-5": [
+  1280,
+  720
+ ],
+ "dimension-6": [
+  1280,
+  720
+ ],
+ "dimension-7": [
+  1280,
+  720
+ ],
+ "dimension-8": [
+  1280,
+  720
+ ],
  "emperatriz-1": [
   450,
   800
@@ -90,6 +122,26 @@
  "emperatriz-3": [
   450,
   800
+ ],
+ "emperatriz-4": [
+  1076,
+  1912
+ ],
+ "emperatriz-5": [
+  1080,
+  1920
+ ],
+ "emperatriz-6": [
+  1080,
+  1920
+ ],
+ "emperatriz-7": [
+  1080,
+  1920
+ ],
+ "emperatriz-8": [
+  1080,
+  1920
  ],
  "habitada-1": [
   800,
@@ -107,6 +159,22 @@
   800,
   450
  ],
+ "habitada-5": [
+  1440,
+  1080
+ ],
+ "habitada-6": [
+  1440,
+  1080
+ ],
+ "habitada-7": [
+  1440,
+  1080
+ ],
+ "habitada-8": [
+  1440,
+  1080
+ ],
  "hot-girl-summer-1": [
   800,
   450
@@ -123,6 +191,22 @@
   800,
   450
  ],
+ "hot-girl-summer-5": [
+  1440,
+  1080
+ ],
+ "hot-girl-summer-6": [
+  1440,
+  1080
+ ],
+ "hot-girl-summer-7": [
+  1441,
+  1080
+ ],
+ "hot-girl-summer-8": [
+  1441,
+  1080
+ ],
  "paranoia-1": [
   800,
   450
@@ -138,6 +222,22 @@
  "paranoia-4": [
   800,
   450
+ ],
+ "paranoia-5": [
+  1280,
+  720
+ ],
+ "paranoia-6": [
+  1280,
+  720
+ ],
+ "paranoia-7": [
+  1280,
+  720
+ ],
+ "paranoia-8": [
+  1280,
+  720
  ],
  "sombras-del-futuro-1": [
   800,
@@ -171,6 +271,22 @@
   800,
   401
  ],
+ "ver-la-luz-5": [
+  1280,
+  640
+ ],
+ "ver-la-luz-6": [
+  1280,
+  641
+ ],
+ "ver-la-luz-7": [
+  1280,
+  641
+ ],
+ "ver-la-luz-8": [
+  1280,
+  641
+ ],
  "volver-a-caer-1": [
   800,
   450
@@ -186,5 +302,21 @@
  "volver-a-caer-4": [
   800,
   450
+ ],
+ "volver-a-caer-5": [
+  1920,
+  1080
+ ],
+ "volver-a-caer-6": [
+  1920,
+  1080
+ ],
+ "volver-a-caer-7": [
+  1920,
+  1080
+ ],
+ "volver-a-caer-8": [
+  1920,
+  1080
  ]
 }

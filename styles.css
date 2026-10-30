@@ -92,7 +92,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
-/* ---------- Nav: four columns over the work ---------- */
+/* ---------- Nav: four columns over the work (home, Trabajos, and the two panels of the home page) ---------- */
 
 .nav {
   position: fixed;
@@ -293,19 +293,20 @@ a.item { cursor: pointer; }
 /* ---------- Narrow screens ---------- */
 
 @media (max-width: 799px) {
+  /* The name on its own row, the three sections spread below it. */
   .nav {
-    grid-template-columns: 1fr auto auto;
-    gap: 1rem;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    row-gap: 0.55rem;
     background: var(--bg);
     color: var(--ink);
     mix-blend-mode: normal;
     border-bottom: 1px solid var(--line);
   }
-  .nav a { justify-self: end !important; }
-  .nav a:first-child { justify-self: start !important; }
-  .nav__reel { display: none; }
+  .nav a { justify-self: auto !important; }
+  .nav a:first-child { grid-column: 1 / -1; }
 
-  .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 2.5rem; padding-top: 3.5rem; }
+  .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); row-gap: 2.5rem; padding-top: 5.5rem; }
   .item { grid-column: 1 / -1; margin-top: 0; }
   .item:nth-child(4n + 2) { grid-column: 2 / -1; }
   .item:nth-child(4n + 3) { grid-column: 1 / 6; }
@@ -338,7 +339,7 @@ a.item { cursor: pointer; }
   z-index: 3;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: baseline;
+  align-items: center;
   padding: 1rem var(--edge);
   font-size: var(--small);
   font-weight: 560;
@@ -346,15 +347,15 @@ a.item { cursor: pointer; }
   text-transform: uppercase;
 }
 .ibar > :last-child { justify-self: end; }
-.ibar--foot { inset: auto 0 0; grid-template-columns: repeat(4, 1fr); padding-bottom: 1.1rem; }
-.ibar--foot > :nth-child(2), .ibar--foot > :nth-child(3) { justify-self: center; }
+.ibar--foot { inset: auto 0 0; grid-template-columns: 1fr 1fr; padding-bottom: 1.1rem; }
 .ibar a, .ibar button { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.4s var(--ease-out); }
-.ibar a:hover, .ibar button:hover, .ibar button[aria-expanded="true"] { background-size: 100% 1px; }
+.ibar a:hover, .ibar button:hover { background-size: 100% 1px; }
 .ibar button { padding: 0; border: 0; background-color: transparent; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
 
-/* The two panels read as buttons: outlined pills with a plus that turns into a cross, solid white while open. */
-.ibar--foot { align-items: center; }
-.ibar .ibar__toggle {
+/* The three ways in read as buttons: outlined pills. Trabajos leads on with an arrow; the two panels
+   carry a plus that turns into a cross, solid white while open. */
+.ibar__links { display: flex; gap: 0.6rem; }
+.ibar .ibar__pill {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
@@ -367,21 +368,23 @@ a.item { cursor: pointer; }
   backdrop-filter: blur(8px);
   transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
 }
-.ibar .ibar__toggle::after {
+.ibar .ibar__pill::after {
   content: "+";
   font-size: 1.35em;
   font-weight: 400;
   line-height: 0.6;
   transition: transform 0.35s var(--ease-out);
 }
-.ibar .ibar__toggle:hover, .ibar .ibar__toggle[aria-expanded="true"] { background: #fff; color: #0b0b0b; }
-.ibar .ibar__toggle[aria-expanded="true"]::after { transform: rotate(45deg); }
+.ibar .ibar__pill--go::after { content: "→"; font-size: 1.1em; }
+.ibar .ibar__pill:hover, .ibar .ibar__pill[aria-expanded="true"] { background: #fff; color: #0b0b0b; }
+.ibar .ibar__pill--go:hover::after { transform: translateX(0.2em); }
+.ibar .ibar__pill[aria-expanded="true"]::after { transform: rotate(45deg); }
 
 /* Three voices: the name as a title card, the trade set in a serif, the line in the small UI voice. */
 .istatement {
   position: relative;
   z-index: 2;
-  padding: clamp(4.5rem, 9vh, 6rem) var(--edge) 0;
+  padding: clamp(6rem, 12vh, 7.5rem) var(--edge) 0;
   transition: opacity 0.4s var(--ease-out);
 }
 .istatement__name {
@@ -417,7 +420,7 @@ a.item { cursor: pointer; }
 .ipanel {
   position: fixed;
   z-index: 2;
-  top: clamp(4.5rem, 9vh, 6rem);
+  top: clamp(6rem, 12vh, 7.5rem);
   bottom: 4rem;
   left: 30%;
   right: var(--edge);
@@ -438,14 +441,14 @@ a.item { cursor: pointer; }
 
 @media (max-width: 799px) {
   .ibar { grid-template-columns: 1fr auto; gap: 1rem; }
-  .ibar:not(.ibar--foot) > :nth-child(2) { display: none; }
+  /* Name and Instagram on the first row, the three pills sharing the second. */
+  .ibar__links { grid-column: 1 / -1; grid-row: 2; gap: 0.4rem; }
+  .ibar .ibar__pill { flex: 1; justify-content: center; gap: 0.4em; padding: 0.65rem 0.4rem; font-size: 0.8rem; }
   .ipanel__list { font-size: 1.2rem; }
-  .ibar--foot { grid-template-columns: 1fr 1fr; row-gap: 0.6rem; }
-  .ibar--foot > * { justify-self: start !important; }
-  .ibar--foot > :nth-child(even) { justify-self: end !important; }
+  .istatement { padding-top: 7.5rem; }
   .istatement__name { font-size: 19vw; }
   .istatement__role { font-size: 9vw; }
-  .ipanel { left: var(--edge); bottom: 5.5rem; }
+  .ipanel { top: 7.5rem; left: var(--edge); bottom: 3.5rem; }
 }
 
 /* ---------- Project page: centred slides over a giant title ---------- */

@@ -114,11 +114,9 @@ if (infoBg) {
   }));
   addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
 
-  // "Cerrar" closes an open panel first, then returns to where the visitor came from.
-  document.querySelector('.ibar__close').addEventListener('click', (e) => {
-    if (document.body.classList.contains('is-panel')) { e.preventDefault(); closeAll(); return; }
-    if (document.referrer.startsWith(location.origin) && history.length > 1) { e.preventDefault(); history.back(); }
-  });
+  // Links from the other pages (index.html#formacion, #creditos) arrive with that panel open.
+  const fromHash = toggles.find((b) => `#${b.getAttribute('aria-controls')}` === location.hash);
+  if (fromHash) fromHash.click();
 }
 
 /* ---------- Project page: centred slides ---------- */

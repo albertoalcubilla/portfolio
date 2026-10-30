@@ -14,28 +14,28 @@
         ["Festival", "Tenerife Noir Express 2025"]] },
 
     { "slug": "paranoia", "title": "Paranoia", "format": "Fashion Film", "role": "DoP", "year": 2024, "cat": "dop",
-      "still": "paranoia", "w": 800, "h": 450, "clip": { "start": 5.6, "end": 8.4 }, "film": { "file": true, "poster": 95, "loop": 160 }, "gallery": 4,
+      "still": "paranoia", "w": 800, "h": 450, "clip": { "start": 5.6, "end": 8.4 }, "film": { "file": true, "poster": 95, "loop": 160 }, "gallery": 4, "frames": [99.2, 153.3, 243.4, 369.6],
       "synopsis": "Un chico, de unos 25 años, despierta de un sueño y se encuentra atrapado en medio de una celda. Aterrorizado y desorientado, se da cuenta de que su pesadilla aparentemente ha terminado, solo para descubrir que sigue sometido a una tortura mental por el sistema opresivo en el que vive.",
       "credits": [["Dirección", "Nestor Luis"], ["Producción", "PIWI.Visual | Pau Mayor"], ["Reparto", "Pau Clavel"],
         ["Dirección de fotografía", "Alberto Alcubilla"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],
         ["Festival", "FIC Gáldar 2026, sección Cortos Canarios"]] },
 
     { "slug": "emperatriz", "title": "Emperatriz", "by": "Cientouno", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
-      "still": "emperatriz", "w": 900, "h": 1597, "film": { "file": true, "ratio": 0.5625, "loop": 10 }, "gallery": 3,
+      "still": "emperatriz", "w": 900, "h": 1597, "film": { "file": true, "ratio": 0.5625, "loop": 10 }, "gallery": 3, "frames": [4.9, 10.9, 24.7, 30.6, 42.5],
       "credits": [["Marca", "Cientouno"], ["Dirección y fotografía", "Lynnette Navarro"], ["Producción", "María Cristóbal"], ["Reparto", "Jaime, Guilia Farris, María Cristóbal"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "hot-girl-summer", "title": "Hot Girl Summer", "by": "Maison Grande", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
-      "still": "hot-girl-summer", "w": 602, "h": 450, "film": { "file": true, "loop": 12, "crop": "960:720", "tileRatio": 1.3333 }, "gallery": 4,
+      "still": "hot-girl-summer", "w": 602, "h": 450, "film": { "file": true, "loop": 12, "crop": "960:720", "tileRatio": 1.3333 }, "gallery": 4, "frames": [6.9, 8.9, 20.8, 30.7],
       "credits": [["Marca", "Maison Grande"], ["Dirección", "Ana Cumbreras - Sena y Lynnette Navarro"], ["Producción", "Coraje Estudios"], ["Reparto", "Maria Chacín"],
         ["Dirección de fotografía", "Lynnette Navarro"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "habitada", "title": "Habitada", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
-      "still": "habitada", "w": 602, "h": 450, "film": { "file": true, "loop": 20, "crop": "960:720", "tileRatio": 1.3333 }, "gallery": 4,
+      "still": "habitada", "w": 602, "h": 450, "film": { "file": true, "loop": 20, "crop": "960:720", "tileRatio": 1.3333 }, "gallery": 4, "frames": [29.1, 39.7, 87.4, 113.9],
       "credits": [["Dirección", "Ana Cumbreras - Sena"], ["Producción", "Coraje Estudios"], ["Reparto", "Azumi Sanchez, Josue Nicolás Avendaño, Lilly Sierra, Pauline Schneider, Chantal Morlas"],
         ["Dirección de fotografía", "Visión tunel (Andán Franco y Samuel Diez)"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "cuando-nadie-me-ve", "title": "Cuando nadie me ve", "format": "Fashion Film", "role": "Gaffer", "year": 2026, "cat": "gaffer",
-      "still": "cuando-nadie-me-ve", "w": 601, "h": 450, "film": { "file": true, "ratio": 1.3333, "loop": 30 }, "gallery": 4,
+      "still": "cuando-nadie-me-ve", "w": 601, "h": 450, "film": { "file": true, "ratio": 1.3333, "loop": 30 }, "gallery": 4, "frames": [23.7, 77.9, 105, 132.1],
       "credits": [["Dirección", "Ana Cumbreras - Sena"], ["Producción", "Coraje Estudios"], ["Reparto", "Jose Miguel, Helena, Guinza"],
         ["Dirección de fotografía", "Visión tunel (Andán Franco y Samuel Diez)"], ["Gaffer", "Alberto Alcubilla"]] },
 
@@ -45,17 +45,17 @@
         ["Dirección de fotografía", "Alberto Magdaleno"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "volver-a-caer", "title": "Volver a caer", "format": "Videoclip", "role": "Gaffer", "year": 2025, "cat": "gaffer",
-      "still": "volver-a-caer", "w": 800, "h": 450, "clip": { "start": 48.5, "end": 56.9 }, "film": { "file": true, "loop": 40 }, "gallery": 4,
+      "still": "volver-a-caer", "w": 800, "h": 450, "clip": { "start": 48.5, "end": 56.9 }, "film": { "file": true, "loop": 40 }, "gallery": 4, "frames": [24.4, 28.2, 54.5, 65.7],
       "credits": [["Dirección", "Sae Morah y Cami Urban"], ["Producción", "Hugo Luna"], ["Cantante", "Ivana Tamayo"],
         ["Dirección de fotografía", "Iana Maliinka y Aaron Ortiz"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "dimension", "title": "Dimension", "format": "Spot publicitario", "role": "Gaffer", "year": 2025, "cat": "gaffer",
-      "still": "dimension", "w": 800, "h": 450, "clip": { "start": 35.5, "end": 48.3 }, "film": { "file": true, "poster": "still", "loop": 100 }, "gallery": 4,
+      "still": "dimension", "w": 800, "h": 450, "clip": { "start": 35.5, "end": 48.3 }, "film": { "file": true, "poster": "still", "loop": 100 }, "gallery": 4, "frames": [34.7, 39.4, 57.9, 104.2],
       "credits": [["Dirección", "Ignacio Tovar"], ["Dirección creativa", "Ben Aguilera"], ["Producción", "Coraje Estudios | Oscar Martin"],
         ["Reparto", "Tyler Freeman, Amy Harben-la Torre, Renne Flores, Alberto Castañeda"], ["Dirección de fotografía", "Lynnette Navarro"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "ver-la-luz", "title": "Ver la luz", "format": "Cortometraje", "role": "Gaffer", "year": 2025, "cat": "gaffer",
-      "still": "ver-la-luz", "w": 800, "h": 401, "clip": { "start": 57.0, "end": 69.5 }, "film": { "file": true, "loop": 140 }, "gallery": 4,
+      "still": "ver-la-luz", "w": 800, "h": 401, "clip": { "start": 57.0, "end": 69.5 }, "film": { "file": true, "loop": 140 }, "gallery": 4, "frames": [141.1, 249.6, 336.5, 488.4],
       "credits": [["Dirección", "Andrea Zambrano"], ["Producción", "Maria Paula"], ["Reparto", "Iñaqui Guevara, Fael García"],
         ["Dirección de fotografía", "Natalia Rodriguez"], ["Gaffer", "Alberto Alcubilla"]] },
 
