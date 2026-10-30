@@ -40,7 +40,7 @@
         ["Dirección de fotografía", "Visión tunel (Andán Franco y Samuel Diez)"], ["Gaffer", "Alberto Alcubilla"]] },
 
     { "slug": "camaleon", "title": "Camaleón", "format": "Cortometraje", "role": "Gaffer", "year": 2026, "cat": "gaffer",
-      "still": "camaleon", "w": 698, "h": 450, "gallery": 4, "status": "En postproducción",
+      "still": "camaleon", "w": 698, "h": 450, "gallery": 8, "status": "En postproducción",
       "credits": [["Dirección", "Daniel Olmos"], ["Producción", "Esteban Cardona"], ["Reparto", "Miguel Paez, Fernando Santos"],
         ["Dirección de fotografía", "Alberto Magdaleno"], ["Gaffer", "Alberto Alcubilla"]] },
 
