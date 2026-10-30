@@ -333,52 +333,22 @@ a.item { cursor: pointer; }
 .infopage__bg video { width: 100%; height: 100%; object-fit: cover; }
 .infopage__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgb(0 0 0 / 0.35), rgb(0 0 0 / 0.1) 45%, rgb(0 0 0 / 0.45)); }
 
-.ibar {
+.infopage__foot {
   position: fixed;
-  inset: 0 0 auto;
+  inset: auto 0 0;
   z-index: 3;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 1rem var(--edge);
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem var(--edge) 1.1rem;
   font-size: var(--small);
   font-weight: 560;
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
-.ibar > :last-child { justify-self: end; }
-.ibar--foot { inset: auto 0 0; grid-template-columns: 1fr 1fr; padding-bottom: 1.1rem; }
-.ibar a, .ibar button { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.4s var(--ease-out); }
-.ibar a:hover, .ibar button:hover { background-size: 100% 1px; }
-.ibar button { padding: 0; border: 0; background-color: transparent; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
-
-/* The three ways in read as buttons: outlined pills. Trabajos leads on with an arrow; the two panels
-   carry a plus that turns into a cross, solid white while open. */
-.ibar__links { display: flex; gap: 0.6rem; }
-.ibar .ibar__pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6em;
-  padding: 0.75rem 1.3rem;
-  border: 1px solid rgb(255 255 255 / 0.85);
-  font-size: 0.95rem;
-  border-radius: 999px;
-  background: rgb(0 0 0 / 0.3);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
-}
-.ibar .ibar__pill::after {
-  content: "+";
-  font-size: 1.35em;
-  font-weight: 400;
-  line-height: 0.6;
-  transition: transform 0.35s var(--ease-out);
-}
-.ibar .ibar__pill--go::after { content: "→"; font-size: 1.1em; }
-.ibar .ibar__pill:hover, .ibar .ibar__pill[aria-expanded="true"] { background: #fff; color: #0b0b0b; }
-.ibar .ibar__pill--go:hover::after { transform: translateX(0.2em); }
-.ibar .ibar__pill[aria-expanded="true"]::after { transform: rotate(45deg); }
+.infopage__foot > :nth-child(2) { justify-self: center; }
+.infopage__foot > :last-child { justify-self: end; }
+.infopage__foot a { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.4s var(--ease-out); }
+.infopage__foot a:hover { background-size: 100% 1px; }
 
 /* Three voices: the name as a title card, the trade set in a serif, the line in the small UI voice. */
 .istatement {
@@ -440,10 +410,8 @@ a.item { cursor: pointer; }
 .ipanel a:hover { color: rgb(255 255 255 / 0.7); }
 
 @media (max-width: 799px) {
-  .ibar { grid-template-columns: 1fr auto; gap: 1rem; }
-  /* Name and Instagram on the first row, the three pills sharing the second. */
-  .ibar__links { grid-column: 1 / -1; grid-row: 2; gap: 0.4rem; }
-  .ibar .ibar__pill { flex: 1; justify-content: center; gap: 0.4em; padding: 0.65rem 0.4rem; font-size: 0.8rem; }
+  .infopage__foot { grid-template-columns: 1fr auto auto; gap: 0.65rem; font-size: 0.68rem; }
+  .infopage__foot > :nth-child(2) { justify-self: auto; }
   .ipanel__list { font-size: 1.2rem; }
   .istatement { padding-top: 7.5rem; }
   .istatement__name { font-size: 19vw; }

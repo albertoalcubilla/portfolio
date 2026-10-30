@@ -96,27 +96,41 @@ if (infoBg) {
     infoBg.src = wide() ? infoBg.dataset.loopLg : infoBg.dataset.loopSm;
     infoBg.play().catch(() => {});
   }
-  const toggles = [...document.querySelectorAll('.ibar__toggle')];
+  const panelLinks = [...document.querySelectorAll('[data-info-panel]')];
+  const panels = panelLinks.map((link) => document.getElementById(link.dataset.infoPanel)).filter(Boolean);
   const closeAll = () => {
-    toggles.forEach((b) => {
-      b.setAttribute('aria-expanded', 'false');
-      document.getElementById(b.getAttribute('aria-controls')).hidden = true;
-    });
+    panels.forEach((panel) => { panel.hidden = true; });
     document.body.classList.remove('is-panel');
   };
-  toggles.forEach((btn) => btn.addEventListener('click', () => {
-    const open = btn.getAttribute('aria-expanded') !== 'true';
+  const openPanel = (id) => {
     closeAll();
-    if (!open) return;
-    btn.setAttribute('aria-expanded', 'true');
-    document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+    const panel = document.getElementById(id);
+    if (!panel) return;
+    panel.hidden = false;
     document.body.classList.add('is-panel');
+  };
+  panelLinks.forEach((link) => link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const id = link.dataset.infoPanel;
+    const panel = document.getElementById(id);
+    if (panel && !panel.hidden) {
+      closeAll();
+      history.replaceState(null, '', location.pathname + location.search);
+    } else {
+      history.pushState(null, '', `#${id}`);
+      openPanel(id);
+    }
   }));
-  addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+  addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAll();
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+  });
 
   // Links from the other pages (index.html#formacion, #creditos) arrive with that panel open.
-  const fromHash = toggles.find((b) => `#${b.getAttribute('aria-controls')}` === location.hash);
-  if (fromHash) fromHash.click();
+  const fromHash = panelLinks.find((link) => `#${link.dataset.infoPanel}` === location.hash);
+  if (fromHash) openPanel(fromHash.dataset.infoPanel);
 }
 
 /* ---------- Project page: centred slides ---------- */
