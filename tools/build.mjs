@@ -333,7 +333,6 @@ ${credits}
 
   <footer class="ibar ibar--foot">
     <a href="mailto:albertoalcu22@gmail.com">albertoalcu22@gmail.com</a>
-    <a href="tel:+34648299274">+34 648 299 274</a>
   </footer>
 
   <script src="main.js" defer></script>
