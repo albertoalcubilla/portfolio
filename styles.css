@@ -352,6 +352,31 @@ a.item { cursor: pointer; }
 .ibar a:hover, .ibar button:hover, .ibar button[aria-expanded="true"] { background-size: 100% 1px; }
 .ibar button { padding: 0; border: 0; background-color: transparent; color: inherit; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
 
+/* The two panels read as buttons: outlined pills with a plus that turns into a cross, solid white while open. */
+.ibar--foot { align-items: center; }
+.ibar .ibar__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.75rem 1.3rem;
+  border: 1px solid rgb(255 255 255 / 0.85);
+  font-size: 0.95rem;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.3);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+.ibar .ibar__toggle::after {
+  content: "+";
+  font-size: 1.35em;
+  font-weight: 400;
+  line-height: 0.6;
+  transition: transform 0.35s var(--ease-out);
+}
+.ibar .ibar__toggle:hover, .ibar .ibar__toggle[aria-expanded="true"] { background: #fff; color: #0b0b0b; }
+.ibar .ibar__toggle[aria-expanded="true"]::after { transform: rotate(45deg); }
+
 /* Three voices: the name as a title card, the trade set in a serif, the line in the small UI voice. */
 .istatement {
   position: relative;
