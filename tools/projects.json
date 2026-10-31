@@ -7,7 +7,7 @@
         ["Dirección de fotografía", "Alberto Alcubilla"], ["Montaje", "Joaquin Hoyos"], ["Color", "Grecia Garza Gómez"]] },
 
     { "slug": "sombras-del-futuro", "title": "Sombras del futuro", "format": "Cortometraje", "role": "DoP", "year": 2025, "cat": "dop",
-      "still": "sombras-del-futuro", "w": 494, "h": 401, "clip": { "start": 8.5, "end": 12.3 }, "gallery": 4, "tile": "sombras-del-futuro-1",
+      "still": "sombras-del-futuro", "w": 494, "h": 401, "film": { "youtube": "4H-Cst96Ggo" }, "gallery": 4, "tile": "sombras-del-futuro-1",
       "synopsis": "Apunta con cuidado y mira al diablo a los ojos.",
       "credits": [["Dirección", "Nestor Luis"], ["Producción", "Natalia Moya"], ["Reparto", "Lara de Blanco, Aitor Fierro, Daniel Oliva, Teo Luis, Julio Sarabia"],
         ["Dirección de fotografía", "Alberto Alcubilla y Haridian Sarabia"], ["Montaje", "Néstor Luis, Haridian Sarabia y Alberto Alcubilla"], ["Etalonaje", "Alberto Alcubilla"],

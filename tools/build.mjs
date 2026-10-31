@@ -44,7 +44,7 @@ function nav(base, current) {
     <a href="${base}index.html" class="nav__name">Alberto Alcubilla</a>
     <a href="${base}trabajos.html"${cur('trabajos')}>Trabajos</a>
     <a href="${base}index.html#formacion">Formación</a>
-    <a href="${base}index.html#creditos">Créditos</a>
+    <a class="nav__credits" href="${base}index.html#creditos">Créditos</a>
   </header>`;
 }
 
@@ -295,14 +295,12 @@ writeFileSync('index.html', `${head('', 'Alberto Alcubilla · Director de Fotogr
       data-loop-sm="assets/web/video/info-640.mp4" data-loop-lg="assets/web/video/info-1280.mp4"></video>
   </div>
 
-  <header class="ibar">
+  <a class="skip" href="#top">Saltar al contenido</a>
+  <header class="nav">
     <a href="index.html" aria-current="page">Alberto Alcubilla</a>
-    <nav class="ibar__links" aria-label="Secciones">
-      <a class="ibar__pill ibar__pill--go" href="trabajos.html">Trabajos</a>
-      <button type="button" class="ibar__pill ibar__toggle" aria-controls="formacion" aria-expanded="false">Formación</button>
-      <button type="button" class="ibar__pill ibar__toggle" aria-controls="creditos" aria-expanded="false">Créditos</button>
-    </nav>
-    <a href="https://www.instagram.com/alberto_alcubilla_/" rel="noopener" target="_blank">Instagram</a>
+    <a href="trabajos.html">Trabajos</a>
+    <button type="button" data-info-panel="formacion" aria-controls="formacion" aria-expanded="false">Formación</button>
+    <button type="button" class="nav__credits" data-info-panel="creditos" aria-controls="creditos" aria-expanded="false">Créditos</button>
   </header>
 
   <main id="top">
@@ -331,8 +329,9 @@ ${credits}
     </section>
   </main>
 
-  <footer class="ibar ibar--foot">
+  <footer class="infopage__foot">
     <a href="mailto:albertoalcu22@gmail.com">albertoalcu22@gmail.com</a>
+    <a href="https://www.instagram.com/alberto_alcubilla_/" rel="noopener" target="_blank">Instagram</a>
   </footer>
 
   <script src="main.js" defer></script>

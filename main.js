@@ -143,8 +143,25 @@ if (track) {
   const count = document.querySelector('[data-count]');
   let index = 0;
 
+  // One turn of the mouse wheel moves one image. A trackpad swipe keeps firing while it coasts,
+  // so the next step waits until the wheel has been still for a moment.
+  const wheelStep = (el, step) => {
+    let busy = false, quiet = 0;
+    el.addEventListener('wheel', (e) => {
+      const d = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if (!d || e.ctrlKey) return;
+      e.preventDefault();
+      clearTimeout(quiet);
+      quiet = setTimeout(() => { busy = false; }, 160);
+      if (busy) return;
+      busy = true;
+      step(Math.sign(d));
+    }, { passive: false });
+  };
+
   const go = (i, smooth = true) => {
     index = Math.max(0, Math.min(slides.length - 1, i));
+    count.textContent = index + 1;
     slides[index].scrollIntoView({ inline: 'center', block: 'nearest', behavior: smooth && !reduceMotion ? 'smooth' : 'auto' });
   };
 
@@ -168,13 +185,9 @@ if (track) {
     if (e.key === 'Escape') document.querySelector('.pbar__close').click();
   });
 
-  // Clicking a video slide that is off to the side brings it to the centre.
-  slides.forEach((s, i) => s.addEventListener('click', (e) => {
-    if (i !== index && !s.querySelector('img') && !e.target.closest('button')) { e.preventDefault(); go(i); }
-  }));
-
   // Images open full size in a modal; the arrows step through them, Esc or a click on the image closes it.
   const pics = slides.filter((s) => s.querySelector('img'));
+  let openPic = null;
   if (pics.length) {
     const box = document.createElement('dialog');
     box.className = 'lightbox';
@@ -200,7 +213,7 @@ if (track) {
       go(slides.indexOf(pics[at]), false);
     };
     box.tabIndex = -1;
-    pics.forEach((s, n) => s.addEventListener('click', () => { show(n); box.showModal(); box.focus(); }));
+    openPic = (n) => { show(n); box.showModal(); box.focus(); };
     box.addEventListener('click', (e) => {
       if (e.target.closest('.lightbox__hd')) {
         hdOn = !hdOn;
@@ -214,12 +227,18 @@ if (track) {
       if (e.key === 'ArrowRight') { e.preventDefault(); show(at + 1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); show(at - 1); }
     });
+    wheelStep(box, (dir) => show(at + dir));
   }
 
-  // Vertical wheel scrolls the strip sideways.
-  track.addEventListener('wheel', (e) => {
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { track.scrollLeft += e.deltaY; e.preventDefault(); }
-  }, { passive: false });
+  // A slide off to the side comes to the centre on click; only the centred image opens the modal.
+  slides.forEach((s, i) => s.addEventListener('click', (e) => {
+    if (e.target.closest('button, a')) return;
+    if (i !== index) { e.preventDefault(); go(i); return; }
+    const n = pics.indexOf(s);
+    if (n >= 0 && openPic) openPic(n);
+  }));
+
+  wheelStep(track, (dir) => go(index + dir));
 
   track.querySelectorAll('.slide--video').forEach((fig) => {
     const v = fig.querySelector('video');
