@@ -1,8 +1,13 @@
 // Genera todas las páginas HTML de la web a partir de tools/projects.json.
 // Uso: node tools/build.mjs   (desde la raíz del proyecto)
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const data = JSON.parse(readFileSync('tools/projects.json', 'utf8'));
+// GitHub Pages lets browsers keep CSS and JS for 10 minutes; a content hash in the URL makes each change load at once.
+const v = (file) => createHash('sha1').update(readFileSync(file)).digest('hex').slice(0, 8);
+const CSS_V = v('styles.css');
+const JS_V = v('main.js');
 const GAL_DIMS = 'assets/web/img/gallery/dims.json';
 const galDims = existsSync(GAL_DIMS) ? JSON.parse(readFileSync(GAL_DIMS, 'utf8')) : {};
 const GAL_HD = 'assets/web/img/gallery/hd.json';
@@ -34,7 +39,7 @@ function head(base, title, description) {
   <meta property="og:image" content="${base}assets/web/img/hero-3-1600.webp">
   <link rel="icon" href="${base}assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="${base}assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="${base}styles.css">
+  <link rel="stylesheet" href="${base}styles.css?v=${CSS_V}">
 </head>`;
 }
 
@@ -63,7 +68,7 @@ function footer(base) {
     <a href="#top">Volver arriba</a>
   </footer>
 
-  <script src="${base}main.js" defer></script>
+  <script src="${base}main.js?v=${JS_V}" defer></script>
 </body>
 </html>
 `;
@@ -237,7 +242,7 @@ ${info}
     </div>
   </aside>
 
-  <script src="../main.js" defer></script>
+  <script src="../main.js?v=${JS_V}" defer></script>
 </body>
 </html>
 `;
@@ -334,7 +339,7 @@ ${credits}
     <a href="https://www.instagram.com/alberto_alcubilla_/" rel="noopener" target="_blank">Instagram</a>
   </footer>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=${JS_V}" defer></script>
 </body>
 </html>
 `);
