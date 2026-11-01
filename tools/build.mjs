@@ -296,7 +296,7 @@ const credits = [...projects.filter((p) => p.cat === 'dop'), ...projects.filter(
 writeFileSync('index.html', `${head('', 'Alberto Alcubilla · Director de Fotografía', 'Alberto Alcubilla, Director de Fotografía y Gaffer. Trabajos, formación, créditos y contacto.')}
 <body class="infopage">
   <div class="infopage__bg" aria-hidden="true">
-    <video muted loop playsinline preload="none" poster="assets/web/video/info.webp"
+    <video muted loop playsinline preload="none"
       data-loop-sm="assets/web/video/info-640.mp4" data-loop-lg="assets/web/video/info-1280.mp4"></video>
   </div>
 

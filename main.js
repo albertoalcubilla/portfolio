@@ -92,8 +92,9 @@ if (finePointer && items.length) {
 /* ---------- Información: footage behind the statement, panels for the longer reads ---------- */
 const infoBg = document.querySelector('.infopage__bg video');
 if (infoBg) {
-  if (!reduceMotion && !saveData) {
-    infoBg.src = wide() ? infoBg.dataset.loopLg : infoBg.dataset.loopSm;
+  // Phones show a still portrait instead (styles.css), so the footage only loads on wide screens.
+  if (!reduceMotion && !saveData && wide()) {
+    infoBg.src = infoBg.dataset.loopLg;
     infoBg.play().catch(() => {});
   }
   const panelLinks = [...document.querySelectorAll('[data-info-panel]')];

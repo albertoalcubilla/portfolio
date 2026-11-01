@@ -337,6 +337,17 @@ a.item { cursor: pointer; }
 .infopage__bg::before { content: ""; position: absolute; inset: -4%; background: url("assets/web/video/info.webp") center / cover no-repeat; }
 .infopage__bg video { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
 .infopage__bg::after { content: ""; position: absolute; inset: 0; z-index: 2; background: linear-gradient(rgb(0 0 0 / 0.35), rgb(0 0 0 / 0.1) 45%, rgb(0 0 0 / 0.45)); }
+/* On phones the footage gives way to the vertical portrait from the set. */
+@media (max-width: 899px) {
+  /* Slightly larger than the screen and pinned to the top, so his face sits below the statement and the crossed arms above the footer. */
+  .infopage__bg::before { inset: 0; background: #1a1d1c url("assets/web/img/home-movil.webp") 40% 0 / auto 112% no-repeat; }
+  .infopage__bg::after { background: linear-gradient(rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.35) 40%, rgb(0 0 0 / 0.05) 60%, rgb(0 0 0 / 0.45)); }
+  .infopage__bg video { display: none; }
+}
+/* Wider than the portrait at that size (landscape phones, tablets): plain cover so no edge shows. */
+@media (max-width: 899px) and (min-aspect-ratio: 89/100) {
+  .infopage__bg::before { background-size: cover; background-position: 40% 30%; }
+}
 
 .infopage__foot {
   position: fixed;
@@ -592,6 +603,22 @@ a.item { cursor: pointer; }
   .slides { gap: 5vw; }
   .slide { width: min(84vw, calc(62svh * var(--r))); }
   .pinfo { right: var(--edge); max-width: none; max-height: 42svh; }
+}
+
+/* Portrait phones: the three sections read as buttons, the name stays plain text above them. */
+@media (max-width: 799px) and (orientation: portrait) {
+  .nav { grid-template-columns: repeat(3, 1fr); column-gap: 0.5rem; row-gap: 0.7rem; padding-bottom: 0.85rem; }
+  .nav > :not(:first-child) {
+    justify-self: stretch !important;
+    padding: 0.6rem 0.4rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background-image: none;
+    text-align: center;
+    transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+  }
+  .nav > :not(:first-child):active { background-color: var(--line); }
+  .nav > [aria-current="page"]:not(:first-child), .nav > [aria-expanded="true"] { background-color: var(--ink); color: var(--bg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
