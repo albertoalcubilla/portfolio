@@ -62,7 +62,7 @@ ${pages.map(([k, label]) => `    <a href="${k}.html"${k === current ? ' aria-cur
 
 function footer(base) {
   return `  <footer class="foot">
-    <span>© Alberto Alcubilla 2026</span>
+    <span>© Alberto Alcubilla 2026 · Web de Daniel Nsue</span>
     <a href="mailto:albertoalcu22@gmail.com">albertoalcu22@gmail.com</a>
     <a href="https://www.instagram.com/alberto_alcubilla_/" rel="noopener" target="_blank">Instagram</a>
     <a href="#top">Volver arriba</a>
@@ -337,6 +337,7 @@ ${credits}
   <footer class="infopage__foot">
     <a href="mailto:albertoalcu22@gmail.com">albertoalcu22@gmail.com</a>
     <a href="https://www.instagram.com/alberto_alcubilla_/" rel="noopener" target="_blank">Instagram</a>
+    <span>Web de Daniel Nsue</span>
   </footer>
 
   <script src="main.js?v=${JS_V}" defer></script>

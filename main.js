@@ -137,6 +137,14 @@ if (infoBg) {
     }
   });
 
+  // Scrolling down (wheel, swipe up, arrow down) on the home page goes to the work.
+  const toWork = () => { if (!document.body.classList.contains('is-panel')) location.href = 'trabajos.html'; };
+  addEventListener('wheel', (e) => { if (e.deltaY > 4) toWork(); }, { passive: true });
+  let touchY = 0;
+  addEventListener('touchstart', (e) => { touchY = e.touches[0].clientY; }, { passive: true });
+  addEventListener('touchend', (e) => { if (touchY - e.changedTouches[0].clientY > 40) toWork(); }, { passive: true });
+  addEventListener('keydown', (e) => { if (e.key === 'ArrowDown' || e.key === 'PageDown') toWork(); });
+
   // Links from the other pages (index.html#formacion, #creditos) arrive with that panel open.
   const fromHash = panelLinks.find((link) => `#${link.dataset.infoPanel}` === location.hash);
   if (fromHash) openPanel(fromHash.dataset.infoPanel);

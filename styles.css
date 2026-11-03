@@ -354,7 +354,7 @@ a.item { cursor: pointer; }
   inset: auto 0 0;
   z-index: 3;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: repeat(3, 1fr);
   padding: 1rem var(--edge) 1.1rem;
   font-size: var(--small);
   font-weight: 560;
@@ -427,6 +427,7 @@ a.item { cursor: pointer; }
 
 @media (max-width: 799px) {
   .infopage__foot { grid-template-columns: 1fr auto; gap: 0.65rem; font-size: 0.68rem; }
+  .infopage__foot > :last-child { grid-column: 1 / -1; justify-self: start; }
   .ipanel__list { font-size: 1.2rem; }
   .istatement { padding-top: 7.5rem; }
   .istatement__name { font-size: 19vw; }
